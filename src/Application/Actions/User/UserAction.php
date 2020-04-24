@@ -3,7 +3,8 @@ declare(strict_types=1);
 
 namespace App\Application\Actions\User;
 
-use Illuminate\Database\Connection;
+// use Illuminate\Database\Connection;
+use Illuminate\Database\Capsule\Manager as Connection;
 use App\Application\Actions\Action;
 use App\Domain\User\UserRepository;
 use Psr\Log\LoggerInterface;
@@ -22,6 +23,7 @@ abstract class UserAction extends Action
     /**
      * @param LoggerInterface $logger
      * @param UserRepository  $userRepository
+     * @param Connection $connection
      */
     public function __construct(LoggerInterface $logger, UserRepository $userRepository, Connection $connection)
     {
